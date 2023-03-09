@@ -1,0 +1,12 @@
+---
+
+- hosts: all
+  gather_facts: False
+  become: true
+
+  tasks:
+
+    - name: Install vim
+      yum:
+        name: vim
+        state: latest
