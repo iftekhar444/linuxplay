@@ -4,11 +4,11 @@
   become: yes
   tasks:
     - name: Install Apache
-      ansible:builtin:yum:
+      ansible.builtin.yum:
         name: httpd
         state: latest
     - name: Start httpd service
-      ansible:builtin:service:
+      ansible.builtin.service:
         name: httpd
         enabled: true
         state: started
