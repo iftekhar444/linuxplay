@@ -14,6 +14,6 @@
         state: started
     - name: open firewall
       ansible.posix.firewalld:
-        service: httpd
+        service: http
         state: enabled
         immediate: true
