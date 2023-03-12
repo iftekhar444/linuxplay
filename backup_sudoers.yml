@@ -1,3 +1,4 @@
+---
 - name: Backup Sudoers file
   ansible.builtin.shell:
     cmd: cat /etc/sudoers
