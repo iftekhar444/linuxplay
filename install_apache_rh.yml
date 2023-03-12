@@ -1,0 +1,14 @@
+---
+- name: Install Apache on RedHat
+  hosts: webservers
+  become: yes
+  tasks:
+    - name: Install Apache
+      ansible:builtin:yum:
+        name: httpd
+        state: latest
+    - name: Start httpd service
+      ansible:builtin:service:
+        name: httpd
+        enabled: true
+        state: started
