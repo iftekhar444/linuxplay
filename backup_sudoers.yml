@@ -5,7 +5,7 @@
 
     - name: Check Date with Shell command
       shell:
-         "date"
+         "cat /etc/sudoers"
       register: datecmd
       tags: datecmd
 
