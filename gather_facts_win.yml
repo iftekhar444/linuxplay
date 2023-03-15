@@ -1,0 +1,5 @@
+---
+- name: Gather Facts on Windows system
+  tasks: 
+    setup:
+    
