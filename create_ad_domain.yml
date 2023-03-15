@@ -21,9 +21,6 @@
   - name: Create Domain
     win_domain: >
        dns_domain_name='{{ domain_name }}'
-       domain_netbios_name: DEMO
-       domain_mode: Win2016
-       forest_mode: Win2016
        safe_mode_password='{{ recovery_password }}'
     register: ad
     
