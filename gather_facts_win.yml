@@ -1,5 +1,10 @@
 ---
 - name: Gather Facts on Windows system
   hosts: all
-  tasks: 
-    setup:
+  gather_facts: true
+
+  tasks:
+    - setup:
+      register: ansible_facts
+    - debug: item
+      with_dict: ansible_facts
