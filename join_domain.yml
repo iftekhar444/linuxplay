@@ -7,7 +7,7 @@
   tasks:
     - name: set DNS IP address
       win_dns_client:
-        adapter_names: Ethernet
+        adapter_names: Ethernet0
         dns_servers: 192.168.34.5
     
     - name: joining to domain
