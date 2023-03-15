@@ -13,5 +13,6 @@
         state: domain
       register: domain_state
 
+    - name: reboot
       win_reboot:
       when: domain_state.reboot_required
