@@ -4,7 +4,7 @@
   gather_facts: no
 
   tasks:
-    - name: adding reg key
+    - name: adding reg key 
       ansible.windows.win_regedit:
         path: 'HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip6\Parameters'
         name: 'DisabledComponents'
