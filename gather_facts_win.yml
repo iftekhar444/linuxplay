@@ -1,5 +1,5 @@
 ---
 - name: Gather Facts on Windows system
+  hosts: all
   tasks: 
     setup:
-    
