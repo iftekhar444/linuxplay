@@ -1,10 +1,5 @@
----
-- name: Gather Facts on Windows system
+- name: Gather Windows Facts 
   hosts: all
-  gather_facts: true
-
   tasks:
-    - setup:
-      register: ansible_facts
-    - debug: item
-      with_dict: ansible_facts
+    - debug: var=vars
+    - debug: var=hostvars[inventory_hostname]
