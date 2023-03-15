@@ -5,11 +5,11 @@
 
   tasks:
     - name: adding reg key
-      ansible.windows.win_regedit:
+      ansible.windows.win_regmerge:
         key: 'HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip6\Parameters'
         value: DisabledComponents
         data: 0xff
-        type: dword
+        datatype: dword
         state: present
       register: complete
     - name: reboot
