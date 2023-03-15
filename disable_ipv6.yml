@@ -11,10 +11,8 @@
         data: '0xff'
         type: dword
         state: present
-      register: done
 
     - name: reboot server
       win_reboot:
-        msg: "Installing AD. Rebooting..."
+        msg: "Rebooting..."
         pre_reboot_delay: 15
-      when: done.changed
