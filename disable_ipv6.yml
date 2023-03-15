@@ -10,7 +10,7 @@
         name: DisabledComponents
         data: 0xff
         type: dword
-        register: complete
+      register: complete
     - name: reboot
       ansible.windows.win_reboot:
         when: complete.changed
