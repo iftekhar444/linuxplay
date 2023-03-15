@@ -6,7 +6,7 @@
   tasks:
     - name: adding reg key 
       ansible.windows.win_regedit:
-        path: 'HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip6\Parameters'
+        path: 'HKLM:\SYSTEM\CurrentControlSet\Services\Tcpip6\Parameters'
         name: 'DisabledComponents'
         data: '0xff'
         type: dword
