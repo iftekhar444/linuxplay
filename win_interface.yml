@@ -1,6 +1,6 @@
 ---
 
-- name: define traditional ethernet facts
+- name: define traditional ethernet gather facts
   hosts: all
   gather_facts: yes
 
