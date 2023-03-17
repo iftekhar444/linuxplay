@@ -4,5 +4,7 @@
   hosts: all
   gather_facts: yes
 
-- debug:
-    msg: "{{ ansible_facts.interfaces }}"
+  tasks: 
+    - name: debug
+      debug:
+        msg: "{{ ansible_facts.interfaces }}"
