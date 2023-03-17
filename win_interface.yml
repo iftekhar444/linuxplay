@@ -7,4 +7,4 @@
   tasks: 
     - name: debug
       debug:
-        msg: "{{ ansible_facts.ansible_default_ipv4.interface }}"
+        msg: "{{ ansible_facts.interface }}"
