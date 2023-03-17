@@ -2,8 +2,8 @@
 
 - name: define traditional ethernet facts
   hosts: all
+  gather_facts: yes
 
   tasks:
-    - name: show interface
-        debug:
-        msg: "{{ ansible_facts.interfaces }}"
+    - debug:
+      msg: "{{ ansible_facts.interfaces }}"
