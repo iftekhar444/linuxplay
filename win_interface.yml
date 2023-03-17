@@ -7,4 +7,4 @@
   tasks: 
     - name: debug
       debug:
-        msg: "{{ ansible_facts.interfaces }}"
+        msg: "{{ ansible_facts.interfaces.connection_name }}"
