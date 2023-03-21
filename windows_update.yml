@@ -1,6 +1,8 @@
 ---
 - name: Update Windows using Ansible
   hosts: nondc
+  collections: 
+    - community.windows
   
   tasks:
     - name: Add  PsWindowsUpdate Powershell Module
