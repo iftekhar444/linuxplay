@@ -1,6 +1,6 @@
 ---
 - name: Update Windows using Ansible
-  hosts: all
+  hosts: nondc
   
   tasks:
     - name: Win Update
