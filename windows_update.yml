@@ -1,0 +1,10 @@
+---
+- name: Update Windows using Ansible
+  hosts: all
+  
+  tasks:
+    - name: Win Update
+      ansible.windows.win_updates:
+        category_names: '*'
+        state: installed
+        reboot: yes
