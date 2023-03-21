@@ -9,6 +9,7 @@
           - SecurityUpdates
           - CriticalUpdate
           - UpdateRollups
+        server_selection: windows_udate
         state: installed
         reboot: yes
         log_path: C:\ansible_win_update.txt
