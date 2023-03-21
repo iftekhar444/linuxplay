@@ -5,10 +5,7 @@
   tasks:
     - name: Win Update
       ansible.windows.win_updates:
-        category_names:
-          - SecurityUpdates
-          - CriticalUpdate
-          - UpdateRollups
+        category_names: '*'
         server_selection: windows_update
         state: installed
         reboot: yes
