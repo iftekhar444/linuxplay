@@ -5,6 +5,10 @@
   tasks:
     - name: Win Update
       ansible.windows.win_updates:
-        category_names: '*'
+        category_names:
+          - SecurityUpdates
+          - CriticalUpdate
+          - UpdateRollups
         state: installed
         reboot: yes
+        log_path: C:\ansible_win_update.txt
