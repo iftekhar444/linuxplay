@@ -1,5 +1,4 @@
 ---
-
 - name: Update Windows using Ansible
   hosts: all
   
