@@ -3,6 +3,11 @@
   hosts: nondc
   
   tasks:
+    - name: Add  PsWindowsUpdate Powershell Module
+      ansible.windows.win_psmodule:
+        name: PsWindowsUpdate
+        state: present
+        
     - name: Win Update
       ansible.windows.win_updates:
         category_names: '*'
