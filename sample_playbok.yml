@@ -1,0 +1,31 @@
+---
+- name: Example Playbook
+  hosts: localhost
+  vars:
+    mystring: "This is a string variable"
+    mybool: true
+    mylist:
+      - Item 1
+      - Item 2
+      - Item 3
+  
+  tasks:
+    - name: Print variable
+      ansible.builtin.debug:
+        msg: "Value of mystring: {{ mystring }}"
+
+    - name: Condition - run something when condition is met
+      ansible.builtin.debug:
+        msg: "Condition is met"
+      when: mybool
+
+    - name: Print List
+      ansible.builtin.debug:
+        var: item
+      loop: "{{ mylist }}"
+
+    - name: Print list with items 
+      ansible.builtin.debug:
+        msg: "{{ item }}"
+      with_items: 
+        - "{{ mylist }}"
