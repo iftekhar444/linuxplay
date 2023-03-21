@@ -1,0 +1,21 @@
+---
+webservers:
+  hosts:
+    web1
+    web2
+
+dbservers:
+  hosts:
+    db1
+    db2
+
+windows:
+  hosts:
+    dc1
+    win1
+    win2
+  vars:
+    ansible_port: 5985
+    ansible_connection: winrm
+    ansible_user: Administrator
+    ansible_password: W3lcome$1
