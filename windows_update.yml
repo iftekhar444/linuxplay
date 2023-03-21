@@ -4,7 +4,7 @@
   
   tasks:
     - name: Add  PsWindowsUpdate Powershell Module
-      win_psmodule:
+      community.windows.win_psmodule:
         name: PsWindowsUpdate
         state: present
 
