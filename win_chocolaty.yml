@@ -5,6 +5,8 @@
   gather_facts: false
   vars:
     - packages:
+      - chocolatey-core.extension
+      - chocolatey-windowsupdate.extension
       - treesizefree
       - googlechrome
   tasks:
