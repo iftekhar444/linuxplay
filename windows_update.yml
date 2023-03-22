@@ -1,18 +1,18 @@
 ---
 - name: Update Windows using Ansible
   hosts: nondc
-  collections: 
-    - community.windows
   
   tasks:
-    - name: Add  PsWindowsUpdate Powershell Module
-      community.windows.win_psmodule:
-        name: PsWindowsUpdate
-        state: present
-
-    - name: Win Update
+    - name: Performing Windows Update 
       ansible.windows.win_updates:
-        category_names: '*'
+        category_names:
+          - CriticalUpdates
+          - DefinitionUpdates
+          - DeveloperKits
+          - FeaturePacks
+          - SecurityUpdates
+          - ServicePacks
+          - UpdateRollups
         server_selection: windows_update
         state: installed
         reboot: yes
