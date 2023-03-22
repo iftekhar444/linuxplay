@@ -1,0 +1,14 @@
+---
+- name: install treesize free and google chrome using chocolatey
+  hosts: nondc
+  become: false
+  gather_facts: false
+  vars:
+    - packages:
+      - treesizefree
+      - googlechrome
+  tasks:
+    - name: install packages
+      chocolatey.chocolatey.win_chocolatey:
+        name: {{ packages }}
+        state: present
