@@ -1,5 +1,0 @@
-collections:
-  - name: ansible.tower
-  - name: chocolatey.chocolatey
-  - name: community.windows
-  - name: ansible.windows 
