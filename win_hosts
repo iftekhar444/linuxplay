@@ -1,0 +1,18 @@
+[dc]
+dc1 ansible_host=192.168.142.15
+
+[nondc]
+win1 ansible_host=192.168.142.16
+win2 ansible_host=192.168.142.17
+
+[windows:children]
+dc
+nondc
+
+[windows:vars]
+ansible_user=Administrator
+ansible_password=W3lcome$1
+ansible_port=5986
+ansible_connection=winrm
+ansible_winrm_transport=basic
+ansible_winrm_server_cert_validation=ignore
