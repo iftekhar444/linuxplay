@@ -1,0 +1,11 @@
+---
+- name: Add a domain user into local administrator group in a windows system
+  hosts: win
+  become: false
+  tasks: 
+    - name: Add a local and domain user to a local group
+      ansible.windows.win_group_membership:
+        name: Administrators
+        members:
+          - DEMO\John_Smith
+        state: present

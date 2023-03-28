@@ -1,0 +1,12 @@
+---
+- name: Copy File from local directory to all windows system
+  hosts: nondc
+  gather_facts: false
+  vars: 
+    source: "MyFile.txt"
+    destination: "Desktop/MyFile.txt"
+  tasks:
+    - name: copy my text file to windows
+      ansible.windows.win_copy:
+        src: "{{ source }}"
+        dest: "{{ destination }}"

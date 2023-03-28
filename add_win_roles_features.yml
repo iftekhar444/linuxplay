@@ -1,0 +1,12 @@
+---
+- name: Install Deduplication feature in windows
+  hosts: win2
+  become: false
+  gather_facts: false
+
+  tasks:
+    - name: add Deduplication feature
+      ansible.windows.win_feature:
+        name: FS-Data-Deduplication
+        state: present
+# You can get windows feature name using Get-WindowsFeature PS Command

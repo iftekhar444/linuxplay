@@ -1,0 +1,29 @@
+---
+- name: Create AD user using Ansible
+  hosts: dc
+  become: false
+  vars_prompt:
+    - name: firstname
+      prompt: New user first name?
+      private: false 
+    - name: lastname
+      prompt: New user last name?
+      private: false
+    - name: pass
+      prompt: New user password?
+    
+  tasks:
+    - name: test print
+      debug:
+        msg: "First name: {{ firstname }}, Last name: {{ lastname }}, Password: {{ pass }}"
+    
+    - name: Ensure user bob is created and use custom credentials to create the user
+      community.windows.win_domain_user:
+        name: "{{ firstname }}_{{ lastname }}"
+        firstname: "{{ firstname }}"
+        surname: "{{ lastname }}"
+        password: "{{ pass }}"
+        state: present
+        domain_username: DEMO\administrator
+        domain_password: W3lcome
+        domain_server: dc1@demo.lab

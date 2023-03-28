@@ -1,0 +1,20 @@
+#!/usr/local/bin/ansible-playbook
+- name: Find dot net framework version
+  hosts: all
+  gather_facts: no
+
+  tasks:
+  - name: Copy the script
+    ansible.windows.win_copy:
+      src: "{{ playbook_dir }}/files/dot_net_version.ps1"
+      dest: C:\temp\
+
+  - name: run the script
+    ansible.windows.win_shell: C:\temp\dot_net_version.ps1
+    register: dot_net_ver
+  
+  - set_fact: 
+      dot_net: "{{ dot_net_ver.stdout_lines }}"
+  
+  - debug: 
+      var: dot_net
